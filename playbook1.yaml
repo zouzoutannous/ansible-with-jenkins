@@ -1,13 +1,8 @@
-- name: "manage worker1 and 2"
-  hosts: all
+- hosts: all
   become: true
+  become_user: root
+  gather_facts: false
   tasks:
-  - name: "ensure Amit user exists"
-    user:
-      name: amit
-      state: absent
-  - name: "ensure Alex user exists"
-    user:
-      name: alex
-      state: absent
+    - include_role:
+        name: tomcat
       
