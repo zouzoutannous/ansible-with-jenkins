@@ -1,0 +1,13 @@
+- name: "manage worker1 and 2"
+  hosts: all
+  become: true
+  tasks:
+  - name: "ensure Amit user exists"
+    user:
+      name: amit
+      state: absent
+  - name: "ensure Alex user exists"
+    user:
+      name: alex
+      state: absent
+      
